@@ -1,0 +1,18 @@
+import sqlite3
+
+conn = sqlite3.connect("database.db")  # Change to your actual database file name
+cursor = conn.cursor()
+
+# Create users table
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
+    )
+""")
+
+conn.commit()
+conn.close()
+
+print("Database and users table created successfully.")
