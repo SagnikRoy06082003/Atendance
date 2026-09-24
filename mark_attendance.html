@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h2>Mark Attendance</h2>
+    <form action="{{ url_for('mark_attendance') }}" method="POST">
+        <input type="text" name="student_name" placeholder="Enter Student Name" required>
+        <label>Entry Time:</label>
+        <input type="datetime-local" id="entry_time" name="entry_time" required>
+        <label>Exit Time:</label>
+        <input type="datetime-local" id="exit_time" name="exit_time" required>
+        <label>Duration (minutes):</label>
+        <input type="text" id="duration" name="duration" readonly>
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("exit_time").addEventListener("change", function() {
+            let entryTime = new Date(document.getElementById("entry_time").value);
+            let exitTime = new Date(this.value);
+
+            if (entryTime && exitTime) {
+                let duration = (exitTime - entryTime) / (1000 * 60); // Convert to minutes
+                duration = duration > 0 ? duration.toFixed(2) : "0.01"; // Minimum 0.01 min
+
+                document.getElementById("duration").value = duration;
+            }
+        });
+    </script>
+</body>
+</html>
+
+

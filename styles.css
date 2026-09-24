@@ -1,0 +1,187 @@
+/* 🌟 Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+/* 🌟 Navbar Styling */
+nav {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #FFD700; /* Golden color */
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #FFD700;
+    color: black;
+}
+
+
+/* 🏠 Landing Page & Webcam */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* 🎥 Webcam */
+#webcam-container {
+    border: 3px solid #FFD700;
+    width: 500px;
+    height: 380px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+/* 📸 Capture Button */
+button {
+    background: #FFD700;
+    color: #222;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffcc00;
+}
+
+/* 📋 Attendance Table */
+.attendance-container {
+    max-width: 90%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #FFD700;
+    color: #222;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* 🔐 Login & Register Page */
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #FFD700;
+    color: #222;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #ffcc00;
+}
+
+/* ⚡ Responsive Design */
+@media (max-width: 768px) {
+    #webcam-container {
+        width: 100%;
+        height: auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
